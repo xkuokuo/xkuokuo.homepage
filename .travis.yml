@@ -1,18 +1,15 @@
 language: generic
-
 install: true
-
 script:
 - mkdir build
 - cp *.html build
-
 deploy:
   provider: s3
   access_key_id: AKIAI2ZPRPGECF27TPNA
   secret_access_key:
-    secure: njPCC/3UZC4aY9qdmZkfGvaUU8Z0kyWagSvsnxe/1KWMfy3N/Hdpw+C7loD93kdx07hnVT5aYydrbmneVZpkjPgEBwBaauDruLZ+G7LWbzKrZMCjXWlbJRT8KpygvyG+/n+Y6Uc94Bvfj+lAfkpp90czXsaD/SdPzjix3TE1bxU2kH5nNG7eQyMfYe5OdYx9Z+fojUHKodI6lGCL1ArtPiDQj3sUijBv+c6Zr2uA29MIAp6ufYIceeD712icUlgpIbCN3Kuz80d92tXmHfwZtde+rciiJQ+8IeRfz/4U+UuZ/aEfCxtMKNESENHpz6IrQhzA3CHEe4alXYuDikEKTH5vStZ9ZQJHdu2iCSC7wiIRoIyCrhBWQMZBJXJKhLHgYu0EAY1FRou4XbJZB8BVU+g1exgv301Bu1/Qo4BSLxfhr8elKKZVKqd9z7UmazDutHJRS7Wf/EpuHUiRWZCGP7lqmd9DFisKqHSo5OTEh0Knv2xsyh1gcL0D6G10HHyr6RFw50WcW4vOElSzv3eV8QfXiX77D9hD69w3HOs+fs4IqNVSvUC7ln3s4Q0EqgeYIci/Qw+cCTolBXZzLCMNNOZQ/xaw/2EuP8swleRp/YsdKtrVwGmu2WUYdTtw2M5o5zfk2SCRpWCdiIPEbCkXDxswE54/t4fOZt8tsX0AZYY=
+    secure: LHl0rHADWVhdnQPKxHQ0XhgauLWkCCdL+YlrK4ClL4Mssp3bOkj7AWpvQgqJezpJ8DxJjz0cwoJLTXWwBEpcTQ4Zqz83Kn5bzF8s1wgonmBPxL/a+EQ5ySyopvUNrm853EKOE/VcozKZuzCx5LEITl6pTswbuw4qgXiBkHlvW0JXgBQ9EuhatSSbTNqcQ6bBymBWKcCdzk1lejCYMmPDCnJhjzwcUazmVjxIJZHcbdHYaZkK2Ftvjk5p04TRPo1Ub8a9SOhtjK13Tc5mQr1wi9ClsXpbFT4u9lW+c6qFjPUCuN40uE4Tyj2tzZuLnpqvTAAxP25OKyM1JSSlxRH0PTXuwCeyAkMq7kz51Zz9Wf7LQSiNZBJtH21CB/3gDQhrXWxhIj9NirtjeNhg5LZ97ArA/i3IS1Etzikt+uVdH7xrFi8gZ4lNnpP3EWAicTGLbhK1QmC+kLWjew2WSnbKApmTpJnMLk3/d+MezoSrW8UW7C1M6sx4Lx705rFhSRO1Z8L+2KtwGK+sFgRYBuoFeWxP9vkskz1F1e2kIB9VpUMX5g4QbfiVy/UpQWe5MT1yhDo/57FOXrP7JAHn2rsf/TsL5dosK9hGfKa2PQnof03Vv0V7TuJfX56C1aowfQz0Eazss38UIJsir2Vn77yguTWBY9DZZuHu67VNqq/wSr0=
   bucket: xinkuo.me
-  local-dir: "build"
-  skip_cleanup: true
+  local-dir: build
+  acl: ''
   on:
     repo: xkuokuo/xkuokuo.homepage
