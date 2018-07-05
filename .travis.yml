@@ -12,3 +12,5 @@ deploy:
   local-dir: build
   on:
     repo: xkuokuo/xkuokuo.homepage
+  skip_cleanup: true
+
