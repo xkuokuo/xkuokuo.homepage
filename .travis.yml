@@ -4,3 +4,13 @@ rvm:
 - 1.9.3
 - jruby-19mode
 - rbx-2
+
+deploy:
+  provider: s3
+  access_key_id: AKIAI2ZPRPGECF27TPNA
+  secret_access_key:
+    secure: njPCC/3UZC4aY9qdmZkfGvaUU8Z0kyWagSvsnxe/1KWMfy3N/Hdpw+C7loD93kdx07hnVT5aYydrbmneVZpkjPgEBwBaauDruLZ+G7LWbzKrZMCjXWlbJRT8KpygvyG+/n+Y6Uc94Bvfj+lAfkpp90czXsaD/SdPzjix3TE1bxU2kH5nNG7eQyMfYe5OdYx9Z+fojUHKodI6lGCL1ArtPiDQj3sUijBv+c6Zr2uA29MIAp6ufYIceeD712icUlgpIbCN3Kuz80d92tXmHfwZtde+rciiJQ+8IeRfz/4U+UuZ/aEfCxtMKNESENHpz6IrQhzA3CHEe4alXYuDikEKTH5vStZ9ZQJHdu2iCSC7wiIRoIyCrhBWQMZBJXJKhLHgYu0EAY1FRou4XbJZB8BVU+g1exgv301Bu1/Qo4BSLxfhr8elKKZVKqd9z7UmazDutHJRS7Wf/EpuHUiRWZCGP7lqmd9DFisKqHSo5OTEh0Knv2xsyh1gcL0D6G10HHyr6RFw50WcW4vOElSzv3eV8QfXiX77D9hD69w3HOs+fs4IqNVSvUC7ln3s4Q0EqgeYIci/Qw+cCTolBXZzLCMNNOZQ/xaw/2EuP8swleRp/YsdKtrVwGmu2WUYdTtw2M5o5zfk2SCRpWCdiIPEbCkXDxswE54/t4fOZt8tsX0AZYY=
+  bucket: xinkuo.me
+  local-dir: "."
+  on:
+    repo: xkuokuo/xkuokuo.homepage
