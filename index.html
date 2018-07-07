@@ -25,7 +25,6 @@
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link" href="#about_me">关于我</a>
             <a class="nav-link" href="#social_media">找到我</a>
-            <a class="nav-link" href="#contact">联系我</a>
           </nav>
         </div>
       </header>
@@ -92,10 +91,52 @@
         <div class="section_content">
           <h2>... 你可以在这些地方找到我</h2>
           <ul class="social_media_list">
-            <li><a href="https://weibo.com/2663109067"><svg class="svg_icon"><use xlink:href="static/img/minima-social-icons.svg#weibo"></use></svg>hi</a></li>
-            <li><a href="https://github.com/xkuokuo"><svg class="svg_icon"><use xlink:href="static/img/minima-social-icons.svg#github"></use></svg>hi</a></li>
-            <li><a href="https://www.linkedin.com/in/xin-kuo"><svg class="svg_icon"><use xlink:href="static/img/minima-social-icons.svg#linkedin"></use></svg>hi</a></li>
+            <li><a href="https://blog.xinkuo.me"><p>博客</p></a></li>
+            <li><a href="https://weibo.com/2663109067"><svg class="svg_icon"><use xlink:href="static/img/minima-social-icons.svg#weibo"></use></svg></a></li>
+            <li><a href="https://github.com/xkuokuo"><svg class="svg_icon"><use xlink:href="static/img/minima-social-icons.svg#github"></use></svg></a></li>
+            <li><a href="https://www.linkedin.com/in/xin-kuo"><svg class="svg_icon"><use xlink:href="static/img/minima-social-icons.svg#linkedin"></use></svg></a></li>
           </ul>
+
+          <h4>直接和我联系</h4>
+          <form id="contact-form" method="post" action="contact.php" role="form">
+            <div class="messages"></div>
+            <div class="controls">
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_name">名字 *</label>
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_email">Email *</label>
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6"></div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label for="form_message">留言 *</label>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                    <div class="help-block with-errors"></div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <input type="submit" class="btn btn-send" value="发送信息">
+                </div>
+              </div>
+            </div>
+
+          </form>
         </div>
       </section>
 
@@ -106,14 +147,14 @@
           <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
         </div>
       </footer>
-              </div>
+    </div>
 
-              <!-- Bootstrap core JavaScript
-                ================================================== -->
-                <!-- Placed at the end of the document so the pages load faster -->
-                <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-                <script>window.jQuery || document.write('<script src="static/js/jquery-slim.min.js"><\/script>')</script>
-                <script src="static/js/popper.min.js"></script>
-                <script src="static/js/bootstrap.min.js"></script>
+    <!-- Bootstrap core JavaScript
+      ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script>window.jQuery || document.write('<script src="static/js/jquery-slim.min.js"><\/script>')</script>
+      <script src="static/js/popper.min.js"></script>
+      <script src="static/js/bootstrap.min.js"></script>
   </body>
 </html>

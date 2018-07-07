@@ -168,6 +168,16 @@ section h2 {
 .social_media_list li {
   display: inline;
 }
+.social_media_list p {
+  height: 48px;
+  width: 48px;
+  font-weight: bold;
+  color: #828282;
+  display: inline-block;
+  margin: 15px;
+  text-align: center;
+  vertical-align: text-top;
+}
 .svg_icon {
   width: 48px;
   height: 48px;
@@ -176,7 +186,10 @@ section h2 {
   margin: 15px;
   vertical-align: text-top;
 }
-
+.btn-send {
+  color: #fafafa;
+  background-color: #90A4AE;
+}
 
 /*
  * Footer
