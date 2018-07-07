@@ -145,11 +145,11 @@ section h2 {
   margin: 15px;
 }
 #project .card {
-  box-shadow: 10px 10px 8px #888888;
+  box-shadow: 5px 5px 5px #888888;
 }
 #project .card img {
-  width:100px; /* you can use % */
-  height: auto;
+  width: auto; /* you can use % */
+  height: 100px;
   margin: auto;
 }
 #project a {
