@@ -2,8 +2,7 @@ language: generic
 install: true
 script:
 - mkdir build
-- cp *.html build
-- cp -r static build
+- cp -r static/* build
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
