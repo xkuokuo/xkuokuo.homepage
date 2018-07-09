@@ -5,6 +5,9 @@ $(document).ready(function() {
     $.ajax({
       data: convertFormToJSON(this),
       type: $(this).attr('method'),
+      beforeSend: function(request) {
+        request.setRequestHeader("Content-Type", "application/json");
+      },
       url: $(this).attr('action'),
       dateaType: 'json',
       success: function() {

@@ -36,5 +36,5 @@ exports.handler = function(event, context, callback) {
     else console.log(data);
   });
 
-  callback(null,createResponse(200, "success"))
+  callback(null,createResponse(200, JSON.stringify({"status": "success"})))
 }
