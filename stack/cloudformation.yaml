@@ -1,0 +1,94 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Parameters:
+  APIDomainName:
+    Type: String
+    Default: api.xinkuo.me
+    Description : domain name for API endpoint
+  RecipientEmail:
+    Type: String
+    Default: dummy@dummy.abc
+    Description : Address of recipient of contact form submitted details
+Resources:
+  ContactMeFunction:
+    Type: AWS::Serverless::Function
+    DependsOn: ContactEmailSNS
+    Properties:
+      Handler: index.handler
+      Runtime: nodejs6.10
+      CodeUri: ./index.js
+      Role: !GetAtt SNSPublishRole.Arn
+      Environment:
+        Variables:
+          TOPIC_ARN: !Ref ContactEmailSNS
+      Events:
+        ContactMePostAPI:
+          Type: Api
+          Properties:
+            Path: /contact-me
+            Method: post
+  ContactEmailSNS:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: ContactMeSNS
+      DisplayName:
+        Fn::Join : [ "", [!Ref "AWS::StackName", "Contact"]]
+      Subscription:
+        - Endpoint: !Ref RecipientEmail
+          Protocol: email
+  SNSPublishRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - lambda.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Policies:
+        - PolicyName: ContactMeMessagePublishPolicy
+          PolicyDocument:
+              Version: '2012-10-17'
+              Statement:
+                - Effect: Allow
+                  Action:
+                  - sns:Publish
+                  Resource: !Ref ContactEmailSNS
+                - Effect: Allow
+                  Action:
+                  - logs:*
+                  Resource: arn:aws:logs:*:*:*
+  ContactMeAPICustomDomain:
+    Type: AWS::ApiGateway::DomainName
+    DependsOn: ContactMeFunction
+    Properties:
+      DomainName: !Ref APIDomainName
+      EndpointConfiguration:
+        Types:
+          - REGIONAL
+      RegionalCertificateArn: arn:aws:acm:us-east-1:198711792892:certificate/02539496-55d0-4d48-bb04-638acb4e13ed
+  ContactMeAPIPathMapping:
+    Type: AWS::ApiGateway::BasePathMapping
+    DependsOn: ContactMeAPICustomDomain
+    Properties:
+      DomainName: !Ref APIDomainName
+      RestApiId: !Ref ServerlessRestApi
+      Stage: !Ref ServerlessRestApiProdStage
+
+  APIGatewayUsagePlan:
+    Type: AWS::ApiGateway::UsagePlan
+    Properties:
+      ApiStages:
+      - ApiId: !Ref ServerlessRestApi
+        Stage: !Ref ServerlessRestApiProdStage
+      Description: Trial Plan 50 requests per day
+      Quota:
+        Limit: 5000
+        Period: MONTH
+      Throttle:
+        BurstLimit: 1
+        RateLimit: 1
+      UsagePlanName: OneTPSPlan

@@ -2,3 +2,4 @@ build/
 .python-version
 .DS_Store
 **/.DS_Store
+**/serverless-output.yaml
