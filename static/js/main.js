@@ -5,11 +5,8 @@ $(document).ready(function() {
     $.ajax({
       data: convertFormToJSON(this),
       type: $(this).attr('method'),
-      beforeSend: function(request) {
-        request.setRequestHeader("Content-Type", "application/json");
-      },
       url: $(this).attr('action'),
-      dateaType: 'json',
+      contentType: "application/json",
       success: function() {
         alert("谢谢，我会及时回复。");
       }
@@ -22,5 +19,5 @@ var convertFormToJSON = function(form) {
   var arr = $(form).serializeArray();
   var res = {};
   arr.forEach((ele) => {res[ele.name] = ele.value})
-  return res;
+  return JSON.stringify(res);
 }
