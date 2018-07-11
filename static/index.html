@@ -31,48 +31,55 @@
     <div class="cover-container d-flex w-100 h-100 mx-auto flex-column">
       <header class="masthead">
         <div class="inner">
-          <h3 class="masthead-brand"><a class="nav-link active" href="#">Home</a></h3>
           <nav class="nav nav-masthead justify-content-center">
             <a class="nav-link" href="#about_me">关于我</a>
             <a class="nav-link" href="#social_media">找到我</a>
+            <a class="nav-link" href="https://blog.xinkuo.me">我的博客</a>
           </nav>
         </div>
       </header>
 
       <main role="main" class="inner">
 
-      <section class="cover" style="background-image:url(img/cover_background.jpg)">
+      <!-- section class="cover" style="background-image:url(img/cover_background.jpg)"-->
+      <section class="cover">
         <div class="cover_text_content">
           <div>
             <h1 class="cover-heading">你好 我是阔阔</h1>
           </div>
           <div>
-            <p class="lead">我是一个程序员。
-            <br>我喜欢解决问题，喜欢看小说，喜欢弹Ukulele，还特别喜欢去动物园。
-            <br>这是我的个人主页。</p>
+            <p class="lead">我是一个程序员，我喜欢解决问题，喜欢看小说，喜欢弹Ukulele，也喜欢去世界各地的动物园看小动物。这里是我的个人主页。</p>
+            <p>
+                <a href="https://blog.xinkuo.me">也欢迎访问我的博客</a>
+            </p>
           </div>
-          <p class="lead">
-          <a href="https://blog.xinkuo.me">Learn more</a>
-          </p>
         </div>
       </section>
 
       <section id="about_me">
-        <div class="section_content">
-          <img class="profile-pic" src="img/profile_picture.jpg">
+        <div class="section_content with-border">
           <h2>关于我自己</h2>
-          <p>我是阔阔，是一名程序员，现在就职于Amazon AWS西雅图总部，在AWS Lambda组从事去服务器（Serverless）云计算平台的开发。</p>
+          <img class="profile-pic" src="img/profile_picture.jpg">
+          <p>我是阔阔，工作是一名程序员，现在住在西雅图。</p>
           <p>我生在北京，在那里度过了十八年，大学四年离家去了东北。本科毕业后直接去了美国念Master，开始工作以后又从匹兹堡搬到了西雅图。我特别喜欢西雅图，这里不太冷也不太热，一年中九个月在下雨，但我也想回国，和在美国工作的很多中国程序员一样，内心总是摇摆不定。</p>
           <p>空闲的时间我总想学一点儿跟工作或coding无关的事情。最近一直在学着弹乌克丽丽，希望有一天能弹到自己满意的水平，那时候再去学点儿别的。</p>
         </div>
       </section>
 
+      <section id="about_me">
+        <div class="section_content with-border">
+          <h2>关于工作</h2>
+          <p>Master毕业后，我就来了Amazon西雅图总部。实习的时候在产品推荐组做算法的改进。实习结束后拿了return offer，加入社交购物部门，围绕客户内容作了一系列项目。一边工作一边学习，一个大组内大大小小十几个服务，如何高效可靠地整合起来，一直都是后端所面临的问题。那段时间开始阅读有关微服务架构（micro-service）和响应式架构（reactive architecture）的书，自己对Amazon的Service Oriented Architecture开始有了更进一步的理解。</p>
+          <p>后来工作中开始接触到AWS Lambda。第一次尝试用Lambda解决生产问题的时候，我意识到以Lambda为代表的Function-as-a-Service服务会是将来的趋势：API的粒度会被进一步细分；无状态的计算模型会迫使每一个Lambda函数的代码逻辑进一步简化；传统后端框架会显得过于臃肿，而被更轻量级的框架或库所取代；大多数性能要求不高的简单服务可以借助Lambda节省大量的资源；更重要的是，传统的后端应用开发难度会大大降低。我开始认真的担心，（在AI取代编程的工作之前）Serverless云服务会使得传统后端开发的很多工作变得不再重要，经过了三轮内部面试，我加入了AWS Lambda。</p>
+        </div>
+      </section>
+
       <section id="project">
-        <div class="section_content">
+        <div class="section_content with-border">
           <h2>自己的 Pet Project</h2>
-          <p>虽然一直都在公司做后端的工作，但自己私下敲的东西只是出于兴趣，跟工作没什么直接关系。</p>
-          <ul class="project_list">
-            <li>
+          <p>虽然一直都在公司做后端开发的工作，但自己私下敲的东西只是出于兴趣，大部分跟工作没什么直接关系。</p>
+          <ul class="list-inline">
+            <li class="list-inline-item">
               <div class="card">
                 <div class="card-body">
                   <a href="https://blog.xinkuo.me/tabctrlp/">
@@ -83,18 +90,18 @@
                 </div>
               </div>
             </li>
-            <li>
+            <li class="list-inline-item">
               <div class="card">
                 <div class="card-body">
                   <a href="#">
                     <img class="card-img-top" src="img/question-mark.png" alt="Card image cap">
                   </a>
                   <h4 class="card-title">Serverless Translator</h4>
-                  <p class="card-text">(WIP) 对比AWS Translation API和Google Cloud Translation的小站点，尝试使用AWS Serverless Application Model构建的Serverless Application</p>
+                  <p class="card-text">尝试使用AWS Serverless Application Model构建的Serverless Application</p>
                 </div>
               </div>
             </li>
-            <li>
+            <li class="list-inline-item">
               <div class="card">
                 <div class="card-body">
                   <a href="https://github.com/xkuokuo/L2tpOnAWSConfig">
@@ -129,7 +136,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="form_name">名字 *</label>
-                    <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                    <input id="form_name" type="text" name="name" class="form-control" placeholder="请输入您的名字 *" required="required" data-error="Firstname is required.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
@@ -139,7 +146,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="form_email">Email *</label>
-                    <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                    <input id="form_email" type="email" name="email" class="form-control" placeholder="请输入Email地址 *" required="required" data-error="Valid email is required.">
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
@@ -149,7 +156,7 @@
                 <div class="col-md-6">
                   <div class="form-group">
                     <label for="form_message">留言 *</label>
-                    <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
+                    <textarea id="form_message" name="message" class="form-control" placeholder="请输入您的留言 *" rows="4" required="required" data-error="Please,leave us a message."></textarea>
                     <div class="help-block with-errors"></div>
                   </div>
                 </div>
@@ -166,7 +173,7 @@
 
       <footer class="mastfoot">
         <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a>, by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a></p>
         </div>
       </footer>
     </div>
