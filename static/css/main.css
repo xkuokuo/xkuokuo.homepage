@@ -218,6 +218,13 @@ section h2 {
 }
 .btn-send {
   color: #fafafa;
+  border: .1rem solid #B0BEC5;
+  background-color: #B0BEC5;
+}
+.btn-send:hover {
+  border: .1rem solid #90A4AE;
+}
+.btn-send:active {
   background-color: #90A4AE;
 }
 
