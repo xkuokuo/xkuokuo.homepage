@@ -23,9 +23,9 @@ Resources:
     Type: AWS::Serverless::Function
     DependsOn: ContactEmailSNS
     Properties:
-      Handler: index.handler
+      Handler: contact_me_lambda.handler
       Runtime: nodejs6.10
-      CodeUri: ./index.js
+      CodeUri: ./contact_me_lambda.js
       Role: !GetAtt SNSPublishRole.Arn
       Environment:
         Variables:

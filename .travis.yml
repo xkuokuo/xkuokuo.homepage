@@ -1,8 +1,10 @@
-language: generic
+language: node_js
+node_js:
+  - "8.9.1"
 install: true
 script:
-- mkdir build
-- cp -r static/* build
+- npm run build
+- rm -rf build/private
 deploy:
   provider: s3
   access_key_id: $AWS_ACCESS_KEY_ID
