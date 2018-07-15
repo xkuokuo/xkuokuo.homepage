@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2",
     "datamaps": "^0.5.9",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
@@ -12,14 +10,18 @@
   "scripts": {
     "clean": "rm -rf build/*",
     "copy-assets": "mkdir -p build && cp -r public/* build",
-    "babel": "mkdir -p build/private/babel && npx babel src/frontend --out-dir build/private/babel --presets react-app/prod",
     "bundle": "npx webpack",
-    "build": "npm run copy-assets && npm run babel && npm run bundle && cp index.html build && cp error.html build",
+    "build": "npm run copy-assets && npm run bundle && cp index.html build && cp error.html build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
     "webpack": "^4.16.0",
-    "webpack-cli": "^3.0.8"
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.5",
+    "babel-preset-react-app": "^3.1.2",
+    "webpack-cli": "^3.0.8",
+    "css-loader": "^1.0.0",
+    "style-loader": "^0.21.0"
   }
 }

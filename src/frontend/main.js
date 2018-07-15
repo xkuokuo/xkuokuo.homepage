@@ -3,6 +3,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import Datamap from 'datamaps'
+import './Main.css'
 
 const e = React.createElement;
 
@@ -31,7 +32,7 @@ class ZooMap extends React.Component {
         highlightOnHover: false
       },
       projection: 'mercator',
-      height: "600",
+      height: "350",
       fills: {
         defaultFill: "#E0E0E0",
         authorHasTraveledTo: "#FF9800",
