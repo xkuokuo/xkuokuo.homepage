@@ -1,4 +1,5 @@
-== 阔阔的个人博客 ==
+##  阔阔的个人主页
+
 Static folder contains all static resources. Just modify.
 
 Stack folder contains AWS cloud formation template.
