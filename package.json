@@ -12,6 +12,7 @@
     "clean": "rm -rf build/*",
     "copy-assets": "mkdir -p build && cp -r public/* build",
     "bundle": "npx webpack",
+    "test": "mocha",
     "build": "npm run copy-assets && npm run bundle && cp index.html build && cp error.html build"
   },
   "devDependencies": {
@@ -19,6 +20,7 @@
     "babel-loader": "^7.1.5",
     "babel-preset-react-app": "^3.1.2",
     "css-loader": "^1.0.0",
+    "mocha": "^5.2.0",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "^4.16.0",
