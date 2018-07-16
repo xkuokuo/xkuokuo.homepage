@@ -4,3 +4,4 @@ build/
 **/.DS_Store
 **/serverless-output.yaml
 node_modules/
+tmp/

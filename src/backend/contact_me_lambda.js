@@ -24,13 +24,11 @@ exports.handler = function(event, context, callback) {
   var message = "From: " + name + "\nEmail: " + email + "\n" + rawMessage;
 
   var sns = new AWS.SNS();
-
   var snsPublishParams = {
     Message: message,
-    Subject: "New Visitor Message From Your Homepage!",
+    Subject: "You Got A New Visitor Message From Your Homepage!",
     TopicArn: topicARN
   }
-
   sns.publish(snsPublishParams, function(err, data) {
     if (err) console.log(err, err.stack);
     else console.log(data);

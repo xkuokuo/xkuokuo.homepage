@@ -11,9 +11,10 @@
     "start": "npx webpack-dev-server --watch --mode development",
     "clean": "rm -rf build/*",
     "copy-assets": "mkdir -p build && cp -r public/* build",
-    "bundle": "npx webpack",
     "test": "mocha",
-    "build": "npm run copy-assets && npm run bundle && cp index.html build && cp error.html build"
+    "bundle": "npx webpack",
+    "deploy-backend": "./bin/deploy_backend.sh",
+    "build": "npm test && npm run copy-assets && npm run bundle && cp index.html build && cp error.html build"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
