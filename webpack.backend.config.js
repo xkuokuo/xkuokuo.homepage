@@ -2,11 +2,13 @@ const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
-  entry: './src/frontend/Main.js',
+  entry: {
+    contact_me_lambda: './src/backend/contact_me_lambda.js'
+  },
   mode: 'production',
   output: {
-    filename: 'main.js',
-    path: path.resolve(__dirname, 'build/js')
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'build/backend/js')
   },
   optimization: {
     minimizer: [

@@ -3,18 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "aws-sdk": "^2.275.1",
     "datamaps": "^0.5.9",
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
   },
   "scripts": {
     "start": "npx webpack-dev-server --watch --mode development",
-    "clean": "rm -rf build/*",
-    "copy-assets": "mkdir -p build && cp -r public/* build",
     "test": "mocha",
-    "bundle": "npx webpack",
+    "clean": "rm -rf build/*",
+    "copy-assets": "mkdir -p build/frontend && cp -r public/* build/frontend",
+    "bundle-frontend": "npx webpack --config ./webpack.frontend.config.js",
+    "bundle-backend": "npx webpack --config ./webpack.backend.config.js",
+    "bundle": "npm run bundle-frontend && npm run bundle-backend",
+    "build": "npm test && npm run copy-assets && npm run bundle && cp index.html build/frontend && cp error.html build/frontend",
+    "deploy-frontend": "",
     "deploy-backend": "./bin/deploy_backend.sh",
-    "build": "npm test && npm run copy-assets && npm run bundle && cp index.html build && cp error.html build"
+    "deploy": "npm run build && npm run deploy-frontend && npm run deploy-backend"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
