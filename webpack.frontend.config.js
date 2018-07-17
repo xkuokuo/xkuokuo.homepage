@@ -3,7 +3,7 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
-    main: './src/frontend/Main.js'
+    main: './frontend/src/Main.js'
   },
   mode: 'production',
   output: {
@@ -36,7 +36,7 @@ module.exports = {
     ]
   },
   devServer: {
-    contentBase: ["./", "./public"],
+    contentBase: ["./frontend", "./frontend/public"],
     publicPath: "/js",
     watchContentBase: true,
     port: 8080,

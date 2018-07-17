@@ -25,7 +25,7 @@ Resources:
     Properties:
       Handler: contact_me_lambda.handler
       Runtime: nodejs6.10
-      CodeUri: ../src/backend/
+      CodeUri: ../backend/js
       Role: !GetAtt SNSPublishRole.Arn
       Environment:
         Variables:
