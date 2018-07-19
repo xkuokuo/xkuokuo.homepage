@@ -1,14 +1,16 @@
 const path = require('path');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const templateContent = require('./frontend/content')
 
 module.exports = {
   entry: {
-    main: './frontend/src/Main.js'
+    'js/main': './frontend/src/Main.js'
   },
   mode: 'production',
   output: {
     filename: '[name].js',
-    path: path.resolve(__dirname, 'build/frontend/js')
+    path: path.resolve(__dirname, 'build/frontend/')
   },
   optimization: {
     minimizer: [
@@ -30,15 +32,23 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
+        test:/\.(s*)css$/,
+        use: [ 'style-loader', 'css-loader', 'sass-loader' ]
       }
     ]
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: path.join(__dirname, './frontend/index.ejs'),
+      filename: 'index.html',
+      content: templateContent
+    })
+  ],
   devServer: {
-    contentBase: ["./frontend", "./frontend/public"],
-    publicPath: "/js",
+    // https://github.com/webpack/webpack-dev-server/issues/1227
+    contentBase: [ path.join(__dirname, "./frontend"), path.join(__dirname, "./frontend/public"), path.join(__dirname, "./frontend/public/css")],
     watchContentBase: true,
+    publicPath: "/",
     port: 8080,
     open: true
   }

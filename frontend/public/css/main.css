@@ -129,6 +129,10 @@ section {
 section h2 {
   margin: 1rem 0;
 }
+br {
+  display: block;
+  line-height: 2.5rem;
+}
 .section_content {
   max-width: 54rem;
   margin: auto;
