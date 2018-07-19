@@ -120,7 +120,7 @@
       </section>
 
       <section id="social_media">
-        <div class="section_content">
+        <div class="section_content with-border">
           <h2><%= htmlWebpackPlugin.options.content.findMe %></h2>
           <ul class="social_media_list">
             <li><a href="https://blog.xinkuo.me"><p>博 客</p></a></li>
@@ -176,7 +176,9 @@
 
       <footer class="mastfoot">
         <div class="inner">
-          <p>Cover template for <a href="https://getbootstrap.com/">Bootstrap</a></p>
+          <p>
+            <%= htmlWebpackPlugin.options.content.title %>
+          </p>
         </div>
       </footer>
     </div>
