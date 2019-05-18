@@ -5,9 +5,9 @@ Globals:
     # enable CORS; to make more specific, change the origin wildcard
     # to a particular domain name, e.g. "'www.example.com'"
     Cors:
-      AllowMethods: "'*'"
-      AllowHeaders: "'*'"
-      AllowOrigin: "'*'"
+      AllowMethods: "'GET,POST,OPTIONS'"
+      AllowHeaders: "'Accept,Accept-encoding,Accept-Language,Content-Length,Content-Type,Origin,Referer,User-Agent'"
+      AllowOrigin: "'https://xinkuo.me'"
 
 Parameters:
   APIDomainName:

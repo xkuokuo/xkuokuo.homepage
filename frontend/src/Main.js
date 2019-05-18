@@ -43,7 +43,7 @@ class ZooMap extends React.Component {
         CHN: { fillKey: "authorHasTraveledTo" },
         SGP: { fillKey: "authorHasTraveledTo" },
         DEU: { fillKey: "authorHasTraveledTo" },
-        MEX: { fillKey: "authorHasTraveledTo" },
+        IRL: { fillKey: "authorHasTraveledTo" },
       },
       bubblesConfig: {
         borderWidth: 2,
@@ -76,6 +76,7 @@ class ZooMap extends React.Component {
       {name: 'Atlanta Aquarium', latitude: 33.7, longitude: -84.3, radius: 8, fillKey: "zoo"},
       {name: 'Honolulu Zoo', latitude: 21.3, longitude: 157.9, radius: 8, fillKey: "zoo"},
       {name: 'Cancún Xcaret', latitude: 21.2, longitude: -86.9, radius: 8, fillKey: "zoo"},
+      {name: 'Dublin Zoo', latitude: 53.3498, longitude: -6.2603, radius: 8, fillKey: "zoo"},
       {name: 'Berlin Zoo', latitude: 52.5, longitude: 13.4, radius: 8, fillKey: "zoo"}
     ], {
       popupTemplate: function(geo, data) {
